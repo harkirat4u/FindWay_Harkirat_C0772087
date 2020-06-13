@@ -15,7 +15,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XFL-Ak-vTN">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" zoomEnabled="NO" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XFL-Ak-vTN">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="824"/>
                                 <gestureRecognizers/>
                                 <connections>
@@ -30,14 +30,25 @@
                                     <action selector="myLocation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wu5-OG-0FW"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UOX-SI-vok">
+                                <rect key="frame" x="270" y="832" width="124" height="30"/>
+                                <state key="normal" title="FindWay"/>
+                                <connections>
+                                    <action selector="FindWay:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8gt-Na-ImH"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="UOX-SI-vok" firstAttribute="leading" secondItem="q7Y-ki-bHf" secondAttribute="trailing" constant="125" id="6P6-Kk-Hti"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="q7Y-ki-bHf" secondAttribute="trailing" constant="269" id="9Vo-JL-aGj"/>
                             <constraint firstItem="q7Y-ki-bHf" firstAttribute="top" secondItem="XFL-Ak-vTN" secondAttribute="bottom" constant="25" id="Fij-e5-hXl"/>
+                            <constraint firstItem="UOX-SI-vok" firstAttribute="top" secondItem="XFL-Ak-vTN" secondAttribute="bottom" constant="8" id="Itu-wj-Gd3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UOX-SI-vok" secondAttribute="trailing" constant="20" id="PB6-Tk-SpP"/>
                             <constraint firstItem="q7Y-ki-bHf" firstAttribute="top" secondItem="XFL-Ak-vTN" secondAttribute="bottom" constant="8" id="Thr-JU-uku"/>
                             <constraint firstItem="XFL-Ak-vTN" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="VmB-OQ-ohc"/>
                             <constraint firstItem="XFL-Ak-vTN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="idD-J4-RfE"/>
+                            <constraint firstItem="UOX-SI-vok" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="pKu-pI-yrt"/>
                             <constraint firstItem="XFL-Ak-vTN" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="pPe-aR-o7h"/>
                             <constraint firstItem="q7Y-ki-bHf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="q5d-dZ-faA"/>
                             <constraint firstItem="q7Y-ki-bHf" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="xYD-p3-WFD"/>
@@ -45,13 +56,14 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="FindWay" destination="UOX-SI-vok" id="5eU-95-xMd"/>
                         <outlet property="mapView" destination="XFL-Ak-vTN" id="SeS-Tp-yzr"/>
                         <outlet property="myLocation" destination="q7Y-ki-bHf" id="d8S-2Y-fzj"/>
                         <outlet property="pinDrop" destination="NiZ-lU-V6h" id="luy-Dp-F3t"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="NiZ-lU-V6h">
+                <tapGestureRecognizer numberOfTapsRequired="2" id="NiZ-lU-V6h">
                     <connections>
                         <action selector="pinDrop:" destination="BYZ-38-t0r" id="aKE-9i-fSH"/>
                     </connections>
