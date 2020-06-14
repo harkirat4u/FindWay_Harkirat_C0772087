@@ -16,50 +16,80 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" zoomEnabled="NO" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XFL-Ak-vTN">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="824"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="Lxg-Df-j4i"/>
                                     <outletCollection property="gestureRecognizers" destination="NiZ-lU-V6h" appends="YES" id="ISn-Fx-V5G"/>
                                 </connections>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q7Y-ki-bHf">
-                                <rect key="frame" x="20" y="832" width="125" height="30"/>
-                                <state key="normal" title="my location"/>
-                                <connections>
-                                    <action selector="myLocation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wu5-OG-0FW"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UOX-SI-vok">
-                                <rect key="frame" x="270" y="832" width="124" height="30"/>
-                                <state key="normal" title="FindWay"/>
+                                <rect key="frame" x="327" y="801.5" width="56" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52.5" id="AFD-Rl-lTz"/>
+                                    <constraint firstAttribute="width" constant="56" id="b7K-rk-FTi"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="paperplane.fill" catalog="system"/>
                                 <connections>
                                     <action selector="FindWay:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8gt-Na-ImH"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s7B-qk-K41">
+                                <rect key="frame" x="327" y="73" width="67" height="44"/>
+                                <state key="normal" backgroundImage="plus.circle" catalog="system"/>
+                                <connections>
+                                    <action selector="addZoom:" destination="BYZ-38-t0r" eventType="touchUpInside" id="op4-aZ-5S9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XsD-f9-eUk">
+                                <rect key="frame" x="327" y="136" width="67" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="57" id="54d-kS-vcT"/>
+                                    <constraint firstAttribute="width" constant="67" id="Cpp-0B-dhO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" backgroundImage="minus.circle" catalog="system"/>
+                                <connections>
+                                    <action selector="minusZoom:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1af-wZ-MbJ"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="hCV-V4-P8x">
+                                <rect key="frame" x="120" y="812" width="159" height="31.5"/>
+                                <segments>
+                                    <segment title="walking"/>
+                                    <segment title="transite"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="UOX-SI-vok" firstAttribute="leading" secondItem="q7Y-ki-bHf" secondAttribute="trailing" constant="125" id="6P6-Kk-Hti"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="q7Y-ki-bHf" secondAttribute="trailing" constant="269" id="9Vo-JL-aGj"/>
-                            <constraint firstItem="q7Y-ki-bHf" firstAttribute="top" secondItem="XFL-Ak-vTN" secondAttribute="bottom" constant="25" id="Fij-e5-hXl"/>
-                            <constraint firstItem="UOX-SI-vok" firstAttribute="top" secondItem="XFL-Ak-vTN" secondAttribute="bottom" constant="8" id="Itu-wj-Gd3"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UOX-SI-vok" secondAttribute="trailing" constant="20" id="PB6-Tk-SpP"/>
-                            <constraint firstItem="q7Y-ki-bHf" firstAttribute="top" secondItem="XFL-Ak-vTN" secondAttribute="bottom" constant="8" id="Thr-JU-uku"/>
-                            <constraint firstItem="XFL-Ak-vTN" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="VmB-OQ-ohc"/>
-                            <constraint firstItem="XFL-Ak-vTN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="idD-J4-RfE"/>
-                            <constraint firstItem="UOX-SI-vok" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="pKu-pI-yrt"/>
-                            <constraint firstItem="XFL-Ak-vTN" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="pPe-aR-o7h"/>
-                            <constraint firstItem="q7Y-ki-bHf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="q5d-dZ-faA"/>
-                            <constraint firstItem="q7Y-ki-bHf" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="xYD-p3-WFD"/>
+                            <constraint firstItem="hCV-V4-P8x" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="120" id="3Gq-9b-tT1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="UOX-SI-vok" secondAttribute="bottom" constant="8.5" id="ErA-qI-3v0"/>
+                            <constraint firstItem="XFL-Ak-vTN" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="-44" id="Fi4-Ha-UvM"/>
+                            <constraint firstItem="UOX-SI-vok" firstAttribute="top" secondItem="XsD-f9-eUk" secondAttribute="bottom" constant="608.5" id="L4I-i8-Qkb"/>
+                            <constraint firstItem="hCV-V4-P8x" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="768" id="LQH-49-p32"/>
+                            <constraint firstItem="XFL-Ak-vTN" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Lsu-3u-Iee"/>
+                            <constraint firstItem="s7B-qk-K41" firstAttribute="trailing" secondItem="XsD-f9-eUk" secondAttribute="trailing" id="Lzs-gA-vit"/>
+                            <constraint firstItem="s7B-qk-K41" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="28.5" id="O4k-Ul-CVt"/>
+                            <constraint firstItem="XsD-f9-eUk" firstAttribute="top" secondItem="s7B-qk-K41" secondAttribute="bottom" constant="18" id="bZD-fV-hoC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XsD-f9-eUk" secondAttribute="trailing" constant="20" id="cRR-3W-YwO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UOX-SI-vok" secondAttribute="trailing" constant="31" id="cTP-Pa-yHd"/>
+                            <constraint firstItem="UOX-SI-vok" firstAttribute="leading" secondItem="hCV-V4-P8x" secondAttribute="trailing" constant="48" id="gEA-u7-PNy"/>
+                            <constraint firstItem="s7B-qk-K41" firstAttribute="leading" secondItem="XsD-f9-eUk" secondAttribute="leading" id="m5r-W8-0DE"/>
+                            <constraint firstItem="hCV-V4-P8x" firstAttribute="centerY" secondItem="UOX-SI-vok" secondAttribute="centerY" id="pQC-8V-FN5"/>
+                            <constraint firstItem="XFL-Ak-vTN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="rpU-kU-W3t"/>
+                            <constraint firstItem="XFL-Ak-vTN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sn0-ea-QFS"/>
+                            <constraint firstItem="XsD-f9-eUk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="327" id="upC-1w-JkW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="FindWay" destination="UOX-SI-vok" id="5eU-95-xMd"/>
+                        <outlet property="addZoom" destination="s7B-qk-K41" id="PHP-2H-HTI"/>
                         <outlet property="mapView" destination="XFL-Ak-vTN" id="SeS-Tp-yzr"/>
-                        <outlet property="myLocation" destination="q7Y-ki-bHf" id="d8S-2Y-fzj"/>
+                        <outlet property="minusZoom" destination="XsD-f9-eUk" id="1h2-BV-Iqv"/>
                         <outlet property="pinDrop" destination="NiZ-lU-V6h" id="luy-Dp-F3t"/>
+                        <outlet property="transportation" destination="hCV-V4-P8x" id="eyV-vl-Hdu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -72,4 +102,9 @@
             <point key="canvasLocation" x="137.68115942028987" y="113.83928571428571"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="minus.circle" catalog="system" width="128" height="121"/>
+        <image name="paperplane.fill" catalog="system" width="128" height="121"/>
+        <image name="plus.circle" catalog="system" width="128" height="121"/>
+    </resources>
 </document>
